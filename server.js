@@ -53,12 +53,18 @@ app.get('/about',  (request, response) => {
     });
 });
 
+app.get('/projects', (request, response) => {
+    response.render('projects.hbs', {
+       pageTitle: "Projects"
+    });
+});
+
 app.get('/bad', (request, response) => {
 
     response.send({
         errorMessage : 'Unable to serve this request'
     });
-})
+});
 
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
